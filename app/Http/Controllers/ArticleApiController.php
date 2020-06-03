@@ -33,9 +33,9 @@ class ArticleApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(\CreateArticleRequest $request)
+    public function store(Request $request)
     {
-        return Article::create($request->all());
+        return Articles::create($request->all());
     }
 
     /**

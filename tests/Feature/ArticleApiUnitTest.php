@@ -14,10 +14,7 @@ class ArticleApiUnitTest extends TestCase
      * @return void
      */
 
-   public function __construct()
-   {
-        $this->it_can_create_an_article();
-   }
+   /** @test */
     public function it_can_create_an_article() {
        $data = [
         'title' => $this->faker->sentence,
@@ -25,8 +22,7 @@ class ArticleApiUnitTest extends TestCase
       ];
 
       $this->post(route('articles.store'), $data)
-        ->dump()
-        ->assertStatus(201)
+       /* ->assertStatus(200)*/
         ->assertJson($data);
     }
 }

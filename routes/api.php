@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ArticlesApiController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,5 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::group(['prefix' => 'v1'], function () {
-  Route::resource('articles', ArticlesApiController::class);
+  Route::resource('articles', ArticleApiController::class);
 });
